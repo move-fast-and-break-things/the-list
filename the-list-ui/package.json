@@ -18,6 +18,7 @@
     "eject": "react-scripts eject",
     "lint": "prettier --check .",
     "lint:fix": "prettier --write ."
+
   },
   "eslintConfig": {
     "extends": [
