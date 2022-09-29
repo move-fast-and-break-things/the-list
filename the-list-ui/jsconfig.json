@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "target": "es5",
+    "jsx": "react-jsx"
+  },
+  "exclude": ["node_modules", "build"]
+}
