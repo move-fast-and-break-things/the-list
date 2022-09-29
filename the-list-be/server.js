@@ -1,6 +1,7 @@
 import Koa from 'koa';
 import Router from '@koa/router';
 import { MongoClient } from 'mongodb';
+import koaBody from 'koa-body';
 
 const app = new Koa();
 const router = new Router();
@@ -11,9 +12,9 @@ const db = client.db('database');
 
 const students = db.collection('students');
 
-router.post('/student', async ctx => {
-  const insertResult = students.insertOne(ctx.request.body);
-  ctx.body = ('Insered documents => ', insertResult);
+router.post('/student', koaBody(), async ctx => {
+  const insertResult = await students.insertOne(ctx.request.body);
+  ctx.body = `Insert documents => ${insertResult}, Request body => ${JSON.stringify(ctx.request.body)}`;
 })
 
 router.get('/students', async ctx => {
@@ -32,6 +33,7 @@ router.get('/hello/:name', async ctx => {
 
 app
   .use(router.routes())
-  .use(router.allowedMethods());
+  .use(router.allowedMethods())
+  .use(koaBody());
 
 app.listen(4000);
