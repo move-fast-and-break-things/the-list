@@ -12,7 +12,7 @@ const db = client.db('database');
 
 const students = db.collection('students');
 
-router.post('/student', koaBody(), async ctx => {
+router.post('/student', async ctx => {
   const insertResult = await students.insertOne(ctx.request.body);
   ctx.body = `Insert documents => ${insertResult}, Request body => ${JSON.stringify(ctx.request.body)}`;
 })
@@ -31,9 +31,11 @@ router.get('/hello/:name', async ctx => {
   console.log('Complete');
 });
 
+app.use(koaBody());
+
 app
   .use(router.routes())
-  .use(router.allowedMethods())
-  .use(koaBody());
+  .use(router.allowedMethods());
+
 
 app.listen(4000);
