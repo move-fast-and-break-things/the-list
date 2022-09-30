@@ -12,7 +12,7 @@ const client = new MongoClient(uri);
 const db = client.db('database');
 const students = db.collection('students');
 
-router.post('/student', async ctx => {
+router.post('/students', async ctx => {
   const insertResult = await students.insertOne(ctx.request.body);
   ctx.body = `Insert documents => ${insertResult}, Request body => ${JSON.stringify(ctx.request.body)}`;
 })
