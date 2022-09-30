@@ -2,6 +2,7 @@ import Koa from 'koa';
 import Router from '@koa/router';
 import { MongoClient } from 'mongodb';
 import koaBody from 'koa-body';
+import { ObjectId } from 'mongodb';
 
 const app = new Koa();
 const router = new Router();
@@ -9,7 +10,6 @@ const router = new Router();
 const uri = 'mongodb://localhost:27017';
 const client = new MongoClient(uri);
 const db = client.db('database');
-
 const students = db.collection('students');
 
 router.post('/student', async ctx => {
