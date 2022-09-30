@@ -1,0 +1,10 @@
+# Кодеоунеры, указанные в этом файле будут автоматически назначены ревьюверами PR,
+# которые изменяют файлы, которыми они владеют.
+# PR будет невозможно смёржить без одобрения кодеоунера.
+
+* @Move-Fast-and-Break-Things-Study-Group/mentors @Move-Fast-and-Break-Things-Study-Group/the-list-be @Move-Fast-and-Break-Things-Study-Group/the-list-ui
+
+/the-list-be @Move-Fast-and-Break-Things-Study-Group/mentors @Move-Fast-and-Break-Things-Study-Group/the-list-be
+/the-list-ui @Move-Fast-and-Break-Things-Study-Group/mentors @Move-Fast-and-Break-Things-Study-Group/the-list-ui
+
+/.github/CODEOWNERS @Move-Fast-and-Break-Things-Study-Group/mentors
