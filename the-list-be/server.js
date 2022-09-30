@@ -22,7 +22,7 @@ router.get('/students', async ctx => {
   ctx.body = findResult;
 })
 
-router.delete('/students_del/:id', async ctx =>{
+router.delete('/students/:id', async ctx =>{
     const studentDelete = await students.deleteOne({_id: ObjectId(ctx.params.id)});
     ctx.body = studentDelete;
 })
