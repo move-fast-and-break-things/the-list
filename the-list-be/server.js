@@ -13,7 +13,7 @@ const students = db.collection('students');
 
 router.post('/students', async ctx => {
   const insertResult = await students.insertOne(ctx.request.body);
-  ctx.body = `Insert documents => ${insertResult}, Request body => ${JSON.stringify(ctx.request.body)}`;
+  ctx.body = insertResult;
 })
 
 router.get('/students', async ctx => {
@@ -21,7 +21,16 @@ router.get('/students', async ctx => {
   ctx.body = findResult;
 })
 
-router.delete('/students/:id', async ctx =>{
+router.delete('/students_del/:id', async ctx =>{
+    const studentDelete = await students.deleteOne({_id: new ObjectId(ctx.params.id)});
+    ctx.body = studentDelete;
+})
+
+router.get('/', async ctx => {
+  ctx.body = 'Hello World';
+});
+
+router.delete('/students_del/:id', async ctx =>{
     const studentDelete = await students.deleteOne({_id: new ObjectId(ctx.params.id)});
     ctx.body = studentDelete;
 })
