@@ -14,7 +14,7 @@ const students = db.collection('students');
 
 router.post('/student', async ctx => {
   const insertResult = await students.insertOne(ctx.request.body);
-  ctx.body = `Insert documents => ${insertResult}, Request body => ${JSON.stringify(ctx.request.body)}`;
+  ctx.body = insertResult;
 })
 
 router.get('/students', async ctx => {
