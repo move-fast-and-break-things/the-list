@@ -26,15 +26,6 @@ router.delete('/students_del/:id', async ctx =>{
     ctx.body = studentDelete;
 })
 
-router.get('/', async ctx => {
-  ctx.body = 'Hello World';
-});
-
-router.delete('/students_del/:id', async ctx =>{
-    const studentDelete = await students.deleteOne({_id: new ObjectId(ctx.params.id)});
-    ctx.body = studentDelete;
-})
-
 app
   .use(koaBody())
   .use(router.routes())
