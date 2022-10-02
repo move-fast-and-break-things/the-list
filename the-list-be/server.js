@@ -33,7 +33,6 @@ router.get('/', async ctx => {
 
 router.get('/hello/:name', async ctx => {
   ctx.body = `Hello ${ctx.params.name}`;
-  console.log('Complete');
 });
 
 app.use(koaBody());
