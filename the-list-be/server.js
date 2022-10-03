@@ -48,6 +48,7 @@ router.post('/students', async ctx => {
   ctx.body = insertResult;
 });
 
+
 router.get('/students', async ctx => {
   const allStudents = await students.find({}).toArray();
   ctx.body = allStudents;
