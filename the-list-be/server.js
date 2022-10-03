@@ -42,9 +42,8 @@ router.get('/attendance/:date', async ctx => {
 
 router.post('/students', async ctx => {
   const insertBody = ctx.request.body;
-  console.log(insertBody);
   if(!insertBody.name || typeof(insertBody.name) !== "string"){
-    app.response.status = 418;
+    ctx.response.status = 418;
     ctx.body = "Как дела на фронте?";
   }
   else{
