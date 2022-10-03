@@ -41,9 +41,16 @@ router.get('/attendance/:date', async ctx => {
 });
 
 router.post('/students', async ctx => {
-  const newStudent = await students.insertOne(ctx.request.body);
-  ctx.body = newStudent;
-});
+  const insertBody = ctx.request.body;
+  console.log(insertBody);
+  if(!insertBody.name || typeof(insertBody.name) !== "string"){
+    ctx.body = "Как дела на фронте?";
+  }
+  else{
+    const insertResult = await students.insertOne({"name": insertBody.name});
+    ctx.body = insertResult;
+  }
+})
 
 router.get('/students', async ctx => {
   const allStudents = await students.find({}).toArray();
