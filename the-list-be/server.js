@@ -42,14 +42,11 @@ router.get('/attendance/:date', async ctx => {
 
 router.post('/students', async ctx => {
   const insertBody = ctx.request.body;
-  if(!insertBody.name || typeof(insertBody.name) !== "string"){
-    ctx.response.status = 418;
-    ctx.body = "Как дела на фронте?";
-  }
-  else{
-    const insertResult = await students.insertOne({"name": insertBody.name});
-    ctx.body = insertResult;
-  }
+  const name = insertBody.name;
+  // @ts-ignore
+  ctx.assert(name, 418, "Как дела на фронте?");
+  const insertResult = await students.insertOne({"name": name});
+  ctx.body = insertResult;
 })
 
 router.get('/students', async ctx => {
