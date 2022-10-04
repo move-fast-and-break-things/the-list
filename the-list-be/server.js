@@ -42,9 +42,9 @@ router.get('/attendance/:date', async ctx => {
 
 router.post('/students', async ctx => {
   const { body } = ctx.request;
-  // @ts-ignore
-  ctx.assert(body?.name, 418, 'Как дела на фронте?');
-  const insertResult = await students.insertOne({ name: body.name });
+    // @ts-ignore
+  ctx.assert(body?.name, 418, "Как дела на фронте?");
+  const insertResult = await students.insertOne({"name": body.name});
   ctx.body = insertResult;
 });
 
