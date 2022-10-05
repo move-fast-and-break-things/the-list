@@ -1,9 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
 import { getStudents } from './request-functions.js';
 
 function App() {
   const backEndURL = process.env.REACT_APP_BACKEND_URL;
+=======
+import {getStudents} from "./request-functions.js";
+
+function App() {
+  const backEndURL = "http://localhost:4000";
+>>>>>>> ad97b5d (Добавил не все файлы в предыдущем коммите)
   const students = getStudents(backEndURL);
   console.log(students);
   return (
@@ -12,6 +19,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p>
+          
         </p>
         <a
           className="App-link"
