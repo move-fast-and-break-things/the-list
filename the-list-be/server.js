@@ -2,6 +2,7 @@ import Koa from 'koa';
 import Router from '@koa/router';
 import { MongoClient, ObjectId } from 'mongodb';
 import koaBody from 'koa-body';
+import cors from '@koa/cors';
 
 const app = new Koa();
 const router = new Router();
@@ -21,12 +22,16 @@ router.get('/students', async ctx => {
   ctx.body = findResult;
 });
 
-router.delete('/students/:id', async ctx => {
-  const studentDelete = await students.deleteOne({
-    _id: new ObjectId(ctx.params.id)
-  });
-  ctx.body = studentDelete;
-});
+router.delete('/students/:id', async ctx =>{
+    const studentDelete = await students.deleteOne({_id: new ObjectId(ctx.params.id)});
+    ctx.body = studentDelete;
+})
+
+app
+  .use(koaBody())
+  .use(cors())
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 app.use(koaBody()).use(router.routes()).use(router.allowedMethods());
 
