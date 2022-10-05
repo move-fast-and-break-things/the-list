@@ -1,13 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import {getStudents} from "./request-functions.js";
 
 function App() {
+  const backEndURL = "http://localhost:4000";
+  const students = getStudents(backEndURL);
+  console.log(students);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p>
+          
         </p>
         <a
           className="App-link"
