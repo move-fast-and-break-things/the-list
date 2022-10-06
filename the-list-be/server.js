@@ -22,13 +22,15 @@ router.post('/students/date', async ctx => {
         studID.push(studentlist[i]._id);
       }
     const StudentInDate = {
-        date: getTodayDate(),
+        date: ctx.request.body.date,
         students: [studID]
     }
+
     const insertStudentInDate = await date.insertOne(StudentInDate);
     ctx.body = insertStudentInDate;
   })
-  router.get('/students/date', async ctx => {
+
+router.get('/students/date', async ctx => {
     const FindStudentsInDate = await date.find({}).toArray();
     ctx.body = FindStudentsInDate;
   })
@@ -41,7 +43,6 @@ router.post('/student', async ctx => {
 
 router.get('/students', async ctx => {
   const findStudents= await students.find({}).toArray();
-
   ctx.body = findStudents;
 })
 
