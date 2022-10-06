@@ -1,18 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-<<<<<<< HEAD
-import { getStudents } from './request-functions.js';
-
-function App() {
-  const backEndURL = process.env.REACT_APP_BACKEND_URL;
-=======
-import {getStudents} from "./request-functions.js";
+import {getStudents, postStudents} from "./request-functions.js";
 
 function App() {
   const backEndURL = "http://localhost:4000";
->>>>>>> ad97b5d (Добавил не все файлы в предыдущем коммите)
-  const students = getStudents(backEndURL);
-  console.log(students);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,11 +12,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>
-          
-        </p>
+        <button 
+// @ts-ignore
+        onClick={postStudents(backEndURL, "Button")}> Тыкалка </button>
         <a
-          className="App-link"
+          className="App-link"  
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
