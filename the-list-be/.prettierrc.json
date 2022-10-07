@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "printWidth": 80,
   "arrowParens": "avoid",
@@ -11,17 +10,4 @@
   "bracketSameLine": true,
   "endOfLine": "auto"
 }
-=======
-{
-  "printWidth": 80,
-  "arrowParens": "avoid",
-  "tabWidth": 2,
-  "useTabs": false,
-  "semi": true,
-  "singleQuote": true,
-  "trailingComma": "none",
-  "bracketSpacing": true,
-  "bracketSameLine": true,
-  "endOfLine": "auto"
-}
->>>>>>> 17d8a5c (Загрузил все с гитхаба)
+
