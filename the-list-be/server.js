@@ -21,7 +21,6 @@ router.post('/students/dailyAttendance', async ctx => {
         date: ctx.request.body.date,
         students: [studID]
     }
-
     await dailyAttendance.updateOne({date: "06.10.2022"}, {$addToSet: {students: studID}});
     const check = await dailyAttendance.find({}).toArray();
     ctx.body = check;
