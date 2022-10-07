@@ -13,8 +13,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <button 
-// @ts-ignore
-        onClick={postStudents(backEndURL, "Button")}> Тыкалка </button>
+        onClick={() => postStudents(backEndURL, "Button")}> Тыкалка </button>
         <a
           className="App-link"  
           href="https://reactjs.org"
