@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {getStudents, postStudents} from "./request-functions.js";
+import {postStudents} from "./request-functions.js";
 
 function App() {
   const backEndURL = "http://localhost:4000";
@@ -12,10 +12,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <button 
-        onClick={() => postStudents(backEndURL, "Button")}> Тыкалка </button>
+        <button onClick={() => postStudents(backEndURL, "kto")}> Тыкалка </button>
         <a
-          className="App-link"  
+          className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
