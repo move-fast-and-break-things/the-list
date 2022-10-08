@@ -51,10 +51,6 @@ router.delete('/students/:id', async ctx =>{
     ctx.body = deleteStudent;
 })
 
-app
-    .use(koaBody())
-    .use(router.routes())
-    .use(router.allowedMethods());
 
 app.use(koaBody()).use(router.routes()).use(router.allowedMethods());
 
