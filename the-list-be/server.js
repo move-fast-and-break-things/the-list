@@ -19,8 +19,9 @@ router.post('/students/dailyAttendance', async ctx => {
     students: [studID]
   };
   await dailyAttendance.updateOne(
-    { date: '06.10.2022' },
-    { $addToSet: { students: studID } }
+    { date: ctx.request.body.date },
+    { $addToSet: { students: studID } },
+    { upsert: true }
   );
   const check = await dailyAttendance.find({}).toArray();
   ctx.body = check;
