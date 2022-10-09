@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .App-logo {
@@ -40,3 +40,107 @@
     transform: rotate(360deg);
   }
 }
+
+.Icon-add {
+  position: absolute;
+  width: 32px;
+  height: 30px;
+  left: 5%;
+  top: 90px;
+}
+
+.Line {
+  /*border: none; /* Убираем границу */
+  background-color: rgb(255, 255, 255); /* Цвет линии */
+  color: rgb(255, 255, 255); /* Цвет линии для IE6-7 */
+  position: absolute;
+  width: 90%;
+  height: 0px;
+  left: 5%;
+  top: 150px;
+}
+
+.Line2 {
+  /*border: none; /* Убираем границу */
+  background-color: rgb(255, 255, 255); /* Цвет линии */
+  color: rgb(255, 255, 255); /* Цвет линии для IE6-7 */
+  position: absolute;
+  width: 90%;
+  height: 0px;
+  left: 5%;
+  top: 300px;
+}
+.Ok-cancel {
+
+  
+}
+#oval {
+  top: 45%;
+  left: 0%;
+  position: absolute;
+  width: 94px;
+  height: 37px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.84) 64.59%, rgba(236, 188, 234, 0.544011) 76.76%, rgba(204, 73, 199, 0.04) 91.03%);
+  border-radius: 0 40px 40px 0;  
+}
+
+#circle {
+  position: absolute;
+  top: 45.3%;
+  left: 23px;
+  width: 33px;
+  height: 33px;
+  background: #7fee1d;
+  -moz-border-radius: 33px;
+  -webkit-border-radius: 33px;
+  border-radius: 60px;
+  background: rgba(204, 73, 199, 0.27);
+}
+
+.Icon-ok {
+  position: absolute;
+  top: 46.5%;
+  left: 32px;
+  width: 17px;
+  height: 17px;
+}
+
+.Icon-cancel {
+  position: absolute;
+  top: 46.8%;
+  left: 65px;
+  width: 14px;
+  height: 14px;
+}
+
+.Icon-ok-be {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  right: 7%;
+  top: 120px;
+}
+
+
+input[type=text] {
+  position: absolute;
+  top: 13%;
+  left: 17%;
+  color: rgb(246, 246, 246);
+  background: none;
+  font-size: 25px;
+}
+
+.user-list {
+  position: absolute;
+  width: 90%;
+  top: 18%;
+  
+  
+}
+.delete-button {
+
+
+
+}
+
