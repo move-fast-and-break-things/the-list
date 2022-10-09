@@ -18,7 +18,7 @@ router.put('/attendance/:date', async ctx => {
     { $addToSet: { students: ctx.request.body._id } },
     { upsert: true }
   );
-  const check = await dailyAttendance.find({}).toArray();
+  const check = await dailyAttendance.find({date: ctx.params.date}).toArray();
   ctx.body = check;
 });
 
