@@ -12,9 +12,9 @@ const db = client.db('database');
 const students = db.collection('students');
 const dailyAttendance = db.collection('dailyAttendance');
 
-router.post('/students/dailyAttendance', async ctx => {
+router.put('/attendance/:date', async ctx => {
   await dailyAttendance.updateOne(
-    { date: ctx.request.body.date },
+    { date: ctx.params.date },
     { $addToSet: { students: ctx.request.body._id } },
     { upsert: true }
   );
@@ -22,8 +22,8 @@ router.post('/students/dailyAttendance', async ctx => {
   ctx.body = check;
 });
 
-router.get('/students/dailyAttendance', async ctx => {
-  const FindStudentsInDate = await dailyAttendance.find({}).toArray();
+router.get('/attendance/:date', async ctx => {
+  const FindStudentsInDate = await dailyAttendance.find({date: ctx.params.date}).toArray();
   ctx.body = FindStudentsInDate;
 });
 
