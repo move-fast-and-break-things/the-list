@@ -12,22 +12,31 @@ const db = client.db('database');
 const students = db.collection('students');
 const dailyAttendance = db.collection('dailyAttendance');
 
-router.put('/attendance/:date', async ctx => {
-  await dailyAttendance.updateOne(
-    { date: ctx.params.date },
-    { $addToSet: { students: ctx.request.body._id } },
-    { upsert: true }
-  );
-  const check = await dailyAttendance.find({date: ctx.params.date}).toArray();
+router.patch('/attendance/:date', async ctx => {
+  if (ctx.request.body.action == 'add') {
+    await dailyAttendance.updateOne(
+      { date: ctx.params.date },
+      { $addToSet: { students: ctx.request.body._id } }
+    );
+  }
+  if (ctx.request.body.action == 'remove') {
+    await dailyAttendance.updateOne(
+      { date: ctx.params.date },
+      { $pull: { students: ctx.request.body._id } }
+    );
+  }
+  const check = await dailyAttendance.findOne({ date: ctx.params.date });
   ctx.body = check;
 });
 
 router.get('/attendance/:date', async ctx => {
-  const FindStudentsInDate = await dailyAttendance.find({date: ctx.params.date}).toArray();
+  const FindStudentsInDate = await dailyAttendance.findOne({
+    date: ctx.params.date
+  });
   ctx.body = FindStudentsInDate;
 });
 
-router.post('/student', async ctx => {
+router.post('/students', async ctx => {
   const insertStudent = await students.insertOne(ctx.request.body);
   ctx.body = insertStudent;
 });
