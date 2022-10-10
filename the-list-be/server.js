@@ -56,14 +56,3 @@ router.delete('/students/:id', async ctx => {
 app.use(koaBody()).use(router.routes()).use(router.allowedMethods());
 
 app.listen(4000);
-
-function getTodayDate() {
-  const todayDate = new Date();
-  return (
-    todayDate.getDate() +
-    '.' +
-    (todayDate.getMonth() + 1) +
-    '.' +
-    todayDate.getFullYear()
-  );
-}
