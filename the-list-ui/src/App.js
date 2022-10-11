@@ -3,7 +3,7 @@ import './App.css';
 import { getStudents } from './request-functions.js';
 
 function App() {
-  const backEndURL = 'http://localhost:4000';
+  const backEndURL = process.env.REACT_APP_BACKEND_URL;
   const students = getStudents(backEndURL);
   console.log(students);
   return (
