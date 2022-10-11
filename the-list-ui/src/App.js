@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import {getStudents} from "./request-functions.js";
+import { getStudents } from './request-functions.js';
 
 function App() {
-  const backEndURL = "http://localhost:4000";
+  const backEndURL = 'http://localhost:4000';
   const students = getStudents(backEndURL);
   console.log(students);
   return (
