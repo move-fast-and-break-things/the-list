@@ -50,10 +50,10 @@ router.get('/students', async ctx => {
 });
 
 router.delete('/students/:id', async ctx => {
-  const deletedStudent = await students.deleteOne({
+  const deleteStudentResult = await students.deleteOne({
     _id: new ObjectId(ctx.params.id)
   });
-  ctx.body = deletedStudent;
+  ctx.body = deleteStudentResult;
 });
 
 app.use(koaBody()).use(router.routes()).use(router.allowedMethods());
