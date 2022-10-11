@@ -33,6 +33,4 @@ app
   .use(router.routes())
   .use(router.allowedMethods());
 
-app.use(koaBody()).use(router.routes()).use(router.allowedMethods());
-
 app.listen(4000);
