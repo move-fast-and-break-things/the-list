@@ -40,20 +40,20 @@ router.get('/attendance/:date', async ctx => {
 });
 
 router.post('/students', async ctx => {
-  const insertStudent = await students.insertOne(ctx.request.body);
-  ctx.body = insertStudent;
+  const newStudent = await students.insertOne(ctx.request.body);
+  ctx.body = newStudent;
 });
 
 router.get('/students', async ctx => {
-  const findStudents = await students.find({}).toArray();
-  ctx.body = findStudents;
+  const allStudents = await students.find({}).toArray();
+  ctx.body = allStudents;
 });
 
 router.delete('/students/:id', async ctx => {
-  const deleteStudent = await students.deleteOne({
+  const deletedStudent = await students.deleteOne({
     _id: new ObjectId(ctx.params.id)
   });
-  ctx.body = deleteStudent;
+  ctx.body = deletedStudent;
 });
 
 app.use(koaBody()).use(router.routes()).use(router.allowedMethods());
