@@ -17,7 +17,7 @@ router.patch('/attendance/:date', async ctx => {
     await dailyAttendance.updateOne(
       { date: ctx.params.date },
       { $addToSet: { students: ctx.request.body._id } },
-      {upsert:true}
+      { upsert: true }
     );
   }
   if (ctx.request.body.action == 'remove') {
@@ -26,12 +26,16 @@ router.patch('/attendance/:date', async ctx => {
       { $pull: { students: ctx.request.body._id } }
     );
   }
-  const updatedAttendance = await dailyAttendance.findOne({ date: ctx.params.date });
+  const updatedAttendance = await dailyAttendance.findOne({
+    date: ctx.params.date
+  });
   ctx.body = updatedAttendance;
 });
 
 router.get('/attendance/:date', async ctx => {
-  const attendanceInDate = await dailyAttendance.findOne({ date: ctx.params.date });
+  const attendanceInDate = await dailyAttendance.findOne({
+    date: ctx.params.date
+  });
   ctx.body = attendanceInDate;
 });
 
@@ -45,10 +49,12 @@ router.get('/students', async ctx => {
   ctx.body = findStudents;
 });
 
-router.delete('/students/:id', async ctx =>{
-    const deleteStudent = await students.deleteOne({_id: new ObjectId(ctx.params.id)});
-    ctx.body = deleteStudent;
-})
+router.delete('/students/:id', async ctx => {
+  const deleteStudent = await students.deleteOne({
+    _id: new ObjectId(ctx.params.id)
+  });
+  ctx.body = deleteStudent;
+});
 
 app.use(koaBody()).use(router.routes()).use(router.allowedMethods());
 
