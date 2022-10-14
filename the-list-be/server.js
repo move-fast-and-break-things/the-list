@@ -2,6 +2,7 @@ import Koa from 'koa';
 import Router from '@koa/router';
 import { MongoClient, ObjectId } from 'mongodb';
 import koaBody from 'koa-body';
+import cors from '@koa/cors';
 
 const app = new Koa();
 const router = new Router();
@@ -60,6 +61,10 @@ router.delete('/students/:id', async ctx => {
   ctx.body = deleteStudentResult;
 });
 
-app.use(koaBody()).use(router.routes()).use(router.allowedMethods());
+app
+  .use(koaBody())
+  .use(cors())
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 app.listen(4000);

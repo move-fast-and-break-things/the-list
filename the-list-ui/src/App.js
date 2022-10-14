@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import { getStudents } from './request-functions.js';
 
 function App() {
+  const backEndURL = process.env.REACT_APP_BACKEND_URL;
+  const students = getStudents(backEndURL);
+  console.log(students);
   return (
     <div className="App">
       <header className="App-header">
