@@ -1,5 +1,4 @@
 import {useState} from "react"
-import logo from './logo.svg';
 import IconAdd from './img/add.png'
 import Ok from './img/ok.png'
 import Cancel from './img/cancel.png'
@@ -26,10 +25,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="Сalendar"></div>
-
-        <div className="input-wrapper">  {/* оболочка ввода*/}
+      <head className="App-header">
+        <title>The List</title>
+      </head>
+      <body>
+        <header>
+          <div className="Сalendar"></div>
+        </header>
+        <section className="input-wrapper">  {/* оболочка ввода*/}
           <input 
             type="text" 
             id="name" 
@@ -44,16 +47,14 @@ const App = () => {
           <button className="Icon-add" onClick={addUser}>Add</button>      {/*Добавляем пользователя в массив*/}
           {/*<img className="Icon-add" src={IconAdd} alt="Icon_add"/>*/}
           {/*<hr className="Line" align="left"/>*/} {/*Подчеркивающая линия*/}
-
-
-        </div>
+        </section>
 
         <ol className="user-list">           {/*список всех пользователей*/}
             {users.map((user,index) => (
-              <div claasName="user">
+              <div className="user">
                 <li key={index}> {user} 
                   <button 
-                    classname="delete-button"
+                    className="delete-button"
                     onClick={() => {
                       deleteUser(user);
                     }}
@@ -76,7 +77,7 @@ const App = () => {
 
 
         {/*<img className="Icon-ok-be" src={Ok_be} alt="Icon_ok_be"/> */}  {/*галочка отметки пользователя*/}
-      </header>
+      </body>
     </div>
   );
 
