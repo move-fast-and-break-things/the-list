@@ -5,8 +5,12 @@ name: Lint code
 # **Who does it impact**: Docs engineering, open-source engineering contributors.
 
 on:
+  push
   workflow_dispatch:
   pull_request:
+    push:
+    branches:
+      - main
     paths:
       - '**.js'
       - '**.mjs'
