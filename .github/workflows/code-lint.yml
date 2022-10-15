@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: '16.15.0'
           cache: npm
-          path: './the-list-be'
+          path: '../../the-list-be'
 
       - name: Install dependencies
         run: npm ci
