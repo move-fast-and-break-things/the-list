@@ -39,9 +39,18 @@ jobs:
         with:
           node-version: '16.15.0'
           cache: npm
-
       - name: Install dependencies
+        working-directory: 'the-list-be'
         run: npm ci
 
       - name: Run linter
+        working-directory: 'the-list-be'
         run: npm run lint
+
+      - name: Install dependencies
+      working-directory: 'the-list-ui'
+      run: npm ci
+
+    - name: Run linter
+      working-directory: 'the-list-ui'
+      run: npm run lint
