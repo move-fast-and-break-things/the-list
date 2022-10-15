@@ -5,19 +5,7 @@ name: Lint code
 # **Who does it impact**: Docs engineering, open-source engineering contributors.
 
 on:
-  workflow_dispatch:
-    push:
-    paths:
-      - '**.js'
-      - '**.mjs'
-      - '**.ts'
-      - '**.tsx'
-      - '**.yaml'
-      - '**.yml'
-      # In case something like eslint or tsc or prettier upgrades
-      - 'package-lock.json'
-      # Ultimately, for debugging this workflow itself
-      - .github/workflows/code-lint.yml
+    push
 
 permissions:
   contents: read
@@ -48,9 +36,9 @@ jobs:
         run: npm run lint
 
       - name: Install dependencies
-      working-directory: 'the-list-ui'
-      run: npm ci
+        working-directory: 'the-list-ui'
+        run: npm ci
 
-    - name: Run linter
-      working-directory: 'the-list-ui'
-      run: npm run lint
+      - name: Run linter
+        working-directory: 'the-list-ui'
+        run: npm run lint
