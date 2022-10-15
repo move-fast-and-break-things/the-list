@@ -27,18 +27,18 @@ jobs:
         with:
           node-version: '16.15.0'
           cache: npm
+          path: './the-list-be'
+
       - name: Install dependencies
-        path: './the-list-be'
         run: npm ci
 
       - name: Run linter
-        working-directory: 'the-list-be'
         run: npm run lint
 
-      - name: Install dependencies
-        path: './the-list-ui'
-        run: npm ci
+      # - name: Install dependencies
+      #   path: './the-list-ui'
+      #   run: npm ci
 
-      - name: Run linter
-        working-directory: 'the-list-ui'
-        run: npm run lint
+      # - name: Run linter
+      #   working-directory: 'the-list-ui'
+      #   run: npm run lint
