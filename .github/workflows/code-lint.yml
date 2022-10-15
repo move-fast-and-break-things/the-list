@@ -28,7 +28,7 @@ jobs:
           node-version: '16.15.0'
           cache: npm
       - name: Install dependencies
-        working-directory: 'the-list-be'
+        path: './the-list-be'
         run: npm ci
 
       - name: Run linter
@@ -36,7 +36,7 @@ jobs:
         run: npm run lint
 
       - name: Install dependencies
-        working-directory: 'the-list-ui'
+        path: './the-list-ui'
         run: npm ci
 
       - name: Run linter
