@@ -26,8 +26,8 @@ jobs:
         uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048
         with:
           node-version: '16.15.0'
-          cache: npm
           path: '../../the-list-be'
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
