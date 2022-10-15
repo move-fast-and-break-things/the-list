@@ -3,11 +3,12 @@ import IconAdd from './img/add.png'
 import Ok from './img/ok.png'
 import Cancel from './img/cancel.png'
 import Ok_be from './img/ok_be.png'
+import Calendar from './img/calendar.png'
 import './App.css';
 
 const App = () => {
-  const [user, setUser] = useState("");
-  const [users, setUsers] = useState([]); {/* если добавлять юзеров в масив*/}
+  const [user, setUser] = useState(""); {/*для хранения значения одного юзера*/}
+  const [users, setUsers] = useState([]); {/* для хранения всех юзеров*/}
   
   const addUser = () => {         {/* добавление юзеров в масив*/}
     if (user!== "") {
@@ -44,7 +45,7 @@ const App = () => {
               setUser(e.target.value); {/*Записывает прошедшее сейчас изменение*/}
             }}
           />
-          <button className="Icon-add" onClick={addUser}>Add</button>      {/*Добавляем пользователя в массив*/}
+          <button className="Icon-add" onClick={addUser}>Add</button>      {/*Добавляем нового пользователя в массив*/}
           {/*<img className="Icon-add" src={IconAdd} alt="Icon_add"/>*/}
           {/*<hr className="Line" align="left"/>*/} {/*Подчеркивающая линия*/}
         </section>
@@ -59,14 +60,14 @@ const App = () => {
                       deleteUser(user);
                     }}
                     >
-                      Delete
-                    </button>
-                  </li>
-                <hr width="100%" align="left"/>
+                    Delete
+                  </button>
+                  <hr className="Line"/>
+                  <p></p>
+                </li>
               </div>
             ))}
         </ol>
-
 
         {/*<div className="Ok-cancel">
           <div id="oval"></div>
@@ -74,9 +75,8 @@ const App = () => {
           <img className="Icon-cancel" src={Cancel} alt="Icon_cancel"/>
           <div id="circle"></div>
         </div>*/}
+        {/*<img className="Icon-ok-be" src={Ok_be} alt="Icon_ok_be"/> */}
 
-
-        {/*<img className="Icon-ok-be" src={Ok_be} alt="Icon_ok_be"/> */}  {/*галочка отметки пользователя*/}
       </body>
     </div>
   );

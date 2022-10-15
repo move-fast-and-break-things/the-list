@@ -1,8 +1,4 @@
 .App {
-  text-align: center;
-}
-
-.App-header {
   background: linear-gradient(
     180deg,
     rgba(77, 16, 250, 0.7) 10.73%,
@@ -11,66 +7,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
+}
+
+.App-header {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.Icon-add {
-  position: absolute;
-  width: 32px;
-  height: 30px;
-  left: 5%;
-  top: 90px;
-}
-
-.Line {
-  /*border: none; /* Убираем границу */
-  background-color: rgb(255, 255, 255); /* Цвет линии */
-  color: rgb(255, 255, 255); /* Цвет линии для IE6-7 */
-  position: absolute;
-  width: 90%;
-  height: 0px;
-  left: 5%;
-  top: 150px;
-}
-
-.Line2 {
-  /*border: none; /* Убираем границу */
-  background-color: rgb(255, 255, 255); /* Цвет линии */
-  color: rgb(255, 255, 255); /* Цвет линии для IE6-7 */
-  position: absolute;
-  width: 90%;
-  height: 0px;
-  left: 5%;
-  top: 300px;
-}
-.Ok-cancel {
-
-  
-}
-#oval {
-  top: 45%;
-  left: 0%;
-  position: absolute;
-  width: 94px;
-  height: 37px;
-  background: linear-gradient(270deg, rgba(255, 255, 255, 0.84) 64.59%, rgba(236, 188, 234, 0.544011) 76.76%, rgba(204, 73, 199, 0.04) 91.03%);
-  border-radius: 0 40px 40px 0;  
 }
 
 #circle {
@@ -84,6 +25,20 @@
   -webkit-border-radius: 33px;
   border-radius: 60px;
   background: rgba(204, 73, 199, 0.27);
+}
+
+.delete-button {
+  position: absolute;
+  position: static;
+  right: 5px;
+}
+
+.Icon-add {
+  position: absolute;
+  width: 32px;
+  height: 30px;
+  left: 5%;
+  top: 90px;
 }
 
 .Icon-ok {
@@ -110,26 +65,55 @@
   top: 120px;
 }
 
+.input-wrapper {
+ 
+}
 
 input[type=text] {
   position: absolute;
   top: 13%;
   left: 17%;
-  color: rgb(246, 246, 246);
+  color: rgb(255, 255, 255);
   background: none;
   font-size: 25px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.Line {
+  background-color: rgb(255, 255, 255); /* Цвет линии */
+  color: rgb(255, 255, 255);
+  position: fixed;
+  width: 90%;
+  left: 22px;
+}
+
+#oval {
+  top: 45%;
+  left: 0%;
+  position: absolute;
+  width: 94px;
+  height: 37px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.84) 64.59%, rgba(236, 188, 234, 0.544011) 76.76%, rgba(204, 73, 199, 0.04) 91.03%);
+  border-radius: 0 40px 40px 0;  
 }
 
 .user-list {
   position: absolute;
   width: 90%;
   top: 18%;
-  
-  
+  text-align: left;
+  color: white;
 }
-.delete-button {
 
 
-
-}
 
