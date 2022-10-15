@@ -20,7 +20,9 @@ router.patch('/attendance/:date', async ctx => {
       { $addToSet: { students: ctx.request.body._id } },
       { upsert: true }
     );
-  } else if (ctx.request.body.action == 'remove') { await dailyAttendance.updateOne({ date: ctx.params.date },
+  } else if (ctx.request.body.action == 'remove') {
+    await dailyAttendance.updateOne(
+      { date: ctx.params.date },
       { $pull: { students: ctx.request.body._id } }
     );
   } else {
