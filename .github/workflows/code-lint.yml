@@ -1,9 +1,5 @@
 name: Linter
 
-# **What it does**: Lints our code to ensure the code matches the specified code style.
-# **Why we have it**: We want some level of consistency to our code.
-# **Who does it impact**: Docs engineering, open-source engineering contributors.
-
 on:
   push
 
