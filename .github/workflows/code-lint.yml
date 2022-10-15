@@ -1,0 +1,34 @@
+name: Linter
+
+on:
+  push
+
+permissions:
+  contents: read
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+          cache-dependency-path: |
+            the-list-be/package-lock.json
+            the-list-ui/package-lock.json
+
+      - name: Lint Backend
+        run: |
+          cd the-list-be
+          npm ci
+          npm run lint
+      
+      - name: Lint Frontend
+        run: |
+          cd the-list-ui
+          npm ci
+          npm run lint
+
