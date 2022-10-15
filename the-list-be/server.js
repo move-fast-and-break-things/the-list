@@ -45,13 +45,25 @@ router.post('/students', async ctx => {
   const { body } = ctx.request;
   // @ts-ignore
   ctx.assert(body?.name, 418, 'Как дела на фронте?');
-  const insertResult = await students.insertOne({ name: body.name });
-  ctx.body = insertResult;
+  const newStudent = await students.insertOne({ name: body.name });
+  ctx.body = newStudent;
 });
 
 router.get('/students', async ctx => {
   const allStudents = await students.find({}).toArray();
   ctx.body = allStudents;
+});
+
+router.patch('/students/:id', async ctx => {
+  const { body } = ctx.request;
+  ctx.assert(body?.name, 418, 'Как дела на фронте?');
+  const editNameStudentResult = await students.updateOne(
+    {
+      _id: new ObjectId(ctx.params.id)
+    },
+    { $set: { name: ctx.request.body.name } }
+  );
+  ctx.body = editNameStudentResult;
 });
 
 router.delete('/students/:id', async ctx => {
