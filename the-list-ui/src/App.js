@@ -36,16 +36,30 @@ const App = () => {
 
   }
 
+  const StudentList = () => {
+
+  }
+
   return (
     <div className="App">
       <head className="App-header">
         <title>The List</title>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"/>
       </head>
       <body>
         <header>
-          <div className="Сalendar"></div>
+        <div className="Сalendar">
+          <div className="day">22</div>
+          <div className="month">Nov</div>
+          <div className="year">2022</div>
+        </div>
         </header>
-        <section className="input-wrapper">  {/* оболочка ввода*/}
+        <section className="Add-user">  {/*добавление пользователя*/}
+          <input className="Img-add" type="image" onClick={StudentList} alt="Add student" src={IconAdd}></input>
+          <hr className="Line"/>
+        </section>
+        {/*
+        <section className="input-wrapper">  
           <input 
             type="text" 
             id="name" 
@@ -54,13 +68,11 @@ const App = () => {
             minlength="4" 
             size="17"
             onChange={(e) => {
-              setUser(e.target.value); {/*Записывает прошедшее сейчас изменение*/}
+              setUser(e.target.value); {/*Записывает прошедшее сейчас изменение
             }}
           />
-          <button className="Icon-add" onClick={addUser}>Add</button>      {/*Добавляем нового пользователя в массив*/}
-          {/*<img className="Icon-add" src={IconAdd} alt="Icon_add"/>*/}
-          {/*<hr className="Line" align="left"/>*/} {/*Подчеркивающая линия*/}
-        </section>
+          <button className="Icon-add" onClick={addUser}>Add</button>    {/*Добавляем нового пользователя в массив
+        </section>*/}
 
         <ol className="user-list">           {/*список всех пользователей*/}
             {users.map((user,index) => (
@@ -80,15 +92,6 @@ const App = () => {
               </div>
             ))}
         </ol>
-
-        {/*<div className="Ok-cancel">
-          <div id="oval"></div>
-          <img className="Icon-ok" src={Ok} alt="Icon_ok"/>
-          <img className="Icon-cancel" src={Cancel} alt="Icon_cancel"/>
-          <div id="circle"></div>
-        </div>*/}
-        {/*<img className="Icon-ok-be" src={Ok_be} alt="Icon_ok_be"/> */}
-
       </body>
     </div>
   );
