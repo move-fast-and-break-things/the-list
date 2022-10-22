@@ -24,6 +24,18 @@ const App = () => {
     setUsers(newUsers);
   };
 
+  const clickAdd = () => {
+    {users.map((user,index) => (
+      <div className="user">
+        <li key={index}> {user} 
+          <hr className="Line"/>
+          <p></p>
+        </li>
+      </div>
+    ))}
+
+  }
+
   return (
     <div className="App">
       <head className="App-header">
