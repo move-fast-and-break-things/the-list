@@ -1,7 +1,9 @@
+const BE_URL = process.env.REACT_APP_BACKEND_URL;
+
 /**
  * @param {string} url
  */
-export async function getStudents(url) {
+export async function getStudents(url = BE_URL) {
   const response = await fetch(`${url}/students`);
   return response.json();
 }
@@ -10,7 +12,7 @@ export async function getStudents(url) {
  * @param {string} url
  * @param {string} name
  */
-export async function postStudents(url, name) {
+export async function postStudents(name, url = BE_URL) {
   await fetch(`${url}/students`, {
     method: 'POST',
     headers: {
