@@ -1,10 +1,7 @@
 const BE_URL = process.env.REACT_APP_BACKEND_URL;
 
-/**
- * @param {string} url
- */
 export async function getStudents() {
-  const response = await fetch(`${url}/students`);
+  const response = await fetch(`${BE_URL}/students`);
   return response.json();
 }
 
