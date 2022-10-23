@@ -9,11 +9,10 @@ export async function getStudents(url = BE_URL) {
 }
 
 /**
- * @param {string} url
  * @param {string} name
  */
-export async function postStudents(name, url = BE_URL) {
-  await fetch(`${url}/students`, {
+export async function postStudents(name) {
+  await fetch(`${BE_URL}/students`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
