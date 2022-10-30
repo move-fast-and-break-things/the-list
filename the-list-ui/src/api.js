@@ -5,6 +5,16 @@ export async function getStudents() {
   return response.json();
 }
 
+export async function deleteStudents(id) {
+        await fetch(`${BE_URL}/students`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ _id: id})
+    });
+  }
+
 /**
  * @param {string} name
  */
