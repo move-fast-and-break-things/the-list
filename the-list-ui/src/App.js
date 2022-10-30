@@ -8,18 +8,16 @@ function App() {
   const [studentsLoadingError, setStudentsLoadingError] = useState();
 
   var divStudents = [];
-  if(!studentsLoadingError){
-    for(let i = 0; i < students?.length; i++){
-      divStudents.push(<div key={students[i]._id}>{students[i].name}</div>)
+  if (!studentsLoadingError) {
+    for (let i = 0; i < students?.length; i++) {
+      divStudents.push(<div key={students[i]._id}>{students[i].name}</div>);
     }
   }
 
   console.log(students);
 
   useEffect(() => {
-    getStudents()
-      .then(setStudents)
-      .catch(setStudentsLoadingError);
+    getStudents().then(setStudents).catch(setStudentsLoadingError);
   }, []);
   return (
     <div className="App">
