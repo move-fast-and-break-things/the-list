@@ -14,7 +14,6 @@ function App() {
     }
   }
 
-  console.log(students);
 
   useEffect(() => {
     getStudents().then(setStudents).catch(setStudentsLoadingError);
