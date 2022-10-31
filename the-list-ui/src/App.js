@@ -9,7 +9,7 @@ function App() {
 
   const divStudents = [];
   if (!studentsLoadingError) {
-    for (let i = 0; i < students?.length; i++) {
+    for (let i = 0; i < students.length; i++) {
       divStudents.push(<div key={students[i]._id}>{students[i].name}</div>);
     }
   }
