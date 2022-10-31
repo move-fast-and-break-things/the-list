@@ -13,7 +13,7 @@ export default function Students() {
   if (studentsLoadingError) {
     return <p>{studentsLoadingError}</p>;
   } else {
-    for (let i = 0; i < students?.length; i++) {
+    for (let i = 0; i < students.length; i++) {
       divStudents.push(<div key={students[i]._id}>{students[i].name}</div>);
     }
 
