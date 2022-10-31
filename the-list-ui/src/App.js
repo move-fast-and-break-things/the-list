@@ -4,10 +4,10 @@ import Input from './components/Input';
 import { getStudents } from './request-functions';
 
 function App() {
-  const [students, setStudents] = useState();
+  const [students, setStudents] = useState([{"_id": "", "name":""}]);
   const [studentsLoadingError, setStudentsLoadingError] = useState();
 
-  var divStudents = [];
+  const divStudents = [];
   if (!studentsLoadingError) {
     for (let i = 0; i < students?.length; i++) {
       divStudents.push(<div key={students[i]._id}>{students[i].name}</div>);
