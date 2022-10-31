@@ -4,7 +4,7 @@ import Input from './components/Input';
 import { getStudents } from './request-functions';
 
 function App() {
-  const [students, setStudents] = useState([{"_id": "", "name":""}]);
+  const [students, setStudents] = useState([{ _id: '', name: '' }]);
   const [studentsLoadingError, setStudentsLoadingError] = useState();
 
   const divStudents = [];
