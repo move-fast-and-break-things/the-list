@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getStudents } from '../request-functions';
-import './style-Students.css';
+import './Students.css';
 
 export default function Students() {
   const [students, setStudents] = useState([]);
@@ -15,15 +15,14 @@ export default function Students() {
     return <p>{studentsLoadingError}</p>;
   } else {
     for (let i = 0; i < students.length; i++) {
-      divStudents.push
-      (<li key={students[i]._id}>
-        {students[i].name}
-        <hr/>      
-      </li>);
+      divStudents.push(
+        <li key={students[i]._id}>
+          {students[i].name}
+          <hr />
+        </li>
+      );
     }
 
-    return (
-      <ol className="Students">{divStudents}</ol>
-    );
+    return <ol className="Students">{divStudents}</ol>;
   }
 }
