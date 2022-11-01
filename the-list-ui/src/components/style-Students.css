@@ -1,0 +1,15 @@
+.Students {
+  color: white;
+  margin: 0;
+  padding: 0;
+  padding-left: 25px;
+}
+
+hr {
+  width: 98%;
+  background-color: #FFFFFF;
+  text-align: center;
+  height: 0px;
+  opacity: 0.5;
+  border: 1px solid #FFFFFF;
+}
