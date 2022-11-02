@@ -1,15 +1,24 @@
 .Students {
+  position: relative;
   color: white;
   margin: 0;
-  padding: 0;
-  padding-left: 25px;
+  padding: 5px;
+  left: 41px;
+  margin: 0px auto;
 }
 
 hr {
-  width: 98%;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: -25px;
+  width: 327px;
   background-color: #ffffff;
   text-align: center;
-  height: 0px;
   opacity: 0.5;
-  border: 1px solid #ffffff;
+  border: 1px solid#ffffff;
+}
+
+li {
+  line-height: 41px;
 }
