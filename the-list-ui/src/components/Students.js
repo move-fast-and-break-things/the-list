@@ -16,13 +16,12 @@ export default function Students() {
   } else {
     for (let i = 0; i < students.length; i++) {
       divStudents.push(
-        <li key={students[i]._id}>
+        <div className="one-student" key={students[i]._id}>
+          <div className='number'>&ensp;{i+1}&nbsp;&ensp;</div>
           {students[i].name}
-          <hr />
-        </li>
+        </div>
       );
     }
-
-    return <ol className="Students">{divStudents}</ol>;
+    return <div className="Students">{divStudents}</div>;
   }
 }

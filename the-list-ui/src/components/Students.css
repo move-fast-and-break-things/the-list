@@ -1,24 +1,20 @@
 .Students {
-  position: relative;
+  display: flexbox;
   color: white;
   margin: 0;
   padding: 5px;
-  left: 41px;
   margin: 0px auto;
 }
 
-hr {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  left: -25px;
-  width: 327px;
-  background-color: #ffffff;
-  text-align: center;
-  opacity: 0.5;
-  border: 1px solid#ffffff;
+.one-student {
+  font-size: 20px;
+  width: 95%;
+  margin:0 auto;
+  line-height: 41px;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
 
-li {
-  line-height: 41px;
+.number {
+  font-size: 15px;
+  display: inline;
 }
