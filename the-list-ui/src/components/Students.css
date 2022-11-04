@@ -9,9 +9,9 @@
 .one-student {
   font-size: 20px;
   width: 95%;
-  margin:0 auto;
+  margin: 0 auto;
   line-height: 41px;
-  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .number {

@@ -17,7 +17,7 @@ export default function Students() {
     for (let i = 0; i < students.length; i++) {
       divStudents.push(
         <div className="one-student" key={students[i]._id}>
-          <div className='number'>&ensp;{i+1}&nbsp;&ensp;</div>
+          <div className="number">&ensp;{i + 1}&nbsp;&ensp;</div>
           {students[i].name}
         </div>
       );
