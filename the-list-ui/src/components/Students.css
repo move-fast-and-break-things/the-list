@@ -14,7 +14,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .number {
@@ -27,7 +27,4 @@
   position: relative;
   display: inline;
   top: 2px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap
 }
