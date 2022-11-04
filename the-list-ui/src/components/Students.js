@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useState } from 'react';
 import { getStudents } from '../request-functions';
 import './Students.css';
@@ -15,12 +16,22 @@ export default function Students() {
     return <p>{studentsLoadingError}</p>;
   } else {
     for (let i = 0; i < students.length; i++) {
-      divStudents.push(
-        <div className="one-student" key={students[i]._id}>
-          <div className="number">&ensp;{i + 1}&nbsp;&ensp;</div>
-          {students[i].name}
-        </div>
-      );
+      if (i<9) {
+        divStudents.push(
+          <div className="one-student" key={students[i]._id}>
+            <div className="number">&ensp;{i + 1}&nbsp;&ensp;</div>
+            <div className='name-one-student'>{students[i].name}</div>
+          </div>
+        );
+      }
+      else {
+        divStudents.push(
+          <div className="one-student" key={students[i]._id}>
+            <div className="number">{i + 1}&nbsp;&ensp;</div>
+            <div className='name-one-student'>{students[i].name}</div>
+          </div>
+        );
+      }
     }
     return <div className="Students">{divStudents}</div>;
   }
