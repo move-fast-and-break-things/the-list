@@ -18,9 +18,13 @@
 }
 
 .number {
+  position: relative;
   font-size: 15px;
-  display: inline;
-  padding-right: 0px 0px;
+  display: inline-block;
+  text-align: center;
+  width: 30px;
+  padding: 0px auto;
+  padding-right: 2px;
 }
 
 .name-one-student {
