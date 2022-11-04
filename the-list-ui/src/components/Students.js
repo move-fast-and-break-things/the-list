@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useEffect, useState } from 'react';
 import { getStudents } from '../request-functions';
 import './Students.css';
@@ -18,8 +17,8 @@ export default function Students() {
     for (let i = 0; i < students.length; i++) {
       divStudents.push(
         <div className="one-student" key={students[i]._id}>
-          <div className='number'>{i + 1}</div>
-          <div className='name-one-student'>{students[i].name}</div>
+          <div className="number">{i + 1}</div>
+          <div className="name-one-student">{students[i].name}</div>
         </div>
       );
     }

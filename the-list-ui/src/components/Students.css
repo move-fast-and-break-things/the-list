@@ -1,9 +1,6 @@
 .Students {
-  display: flexbox;
   color: white;
-  margin: 0;
   padding: 5px;
-  margin: 0px auto;
 }
 
 .one-student {
@@ -18,17 +15,14 @@
 }
 
 .number {
-  position: relative;
   font-size: 15px;
   display: inline-block;
   text-align: center;
   width: 30px;
-  padding: 0px auto;
   padding-right: 2px;
 }
 
 .name-one-student {
-  position: relative;
   display: inline;
-  top: 2px;
+  vertical-align: middle;
 }
