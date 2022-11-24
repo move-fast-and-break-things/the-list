@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { postStudents } from '../request-functions';
+import './Input.css';
 
 export default function Input() {
   const [name, setName] = useState('');
@@ -9,13 +10,14 @@ export default function Input() {
     setName('');
   };
   return (
-    <form onSubmit={onAdd}>
+    <form className="form-input"onSubmit={onAdd}>
       <input
-        placeholder="Введите имя студента"
+        className='input-person'
+        placeholder='Введите имя студента'
         value={name}
         onChange={event => setName(event.target.value)}
       />
-      <button type="submit">Добавить</button>
+      <button className='button-add-user' type="submit"></button>
     </form>
   );
 }

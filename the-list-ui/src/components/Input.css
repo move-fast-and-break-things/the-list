@@ -1,0 +1,30 @@
+.form-input {
+  width: 100%;
+  text-align: center;
+}
+
+.input-person {
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: white;
+  width: 95%;
+  margin: 0 auto;
+  line-height: 41px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.button-add-user {
+  position: absolute;
+  margin-top: 5px;
+  right: 5%;
+  border: none;
+  background: none;
+  background-image: url('./images/add.png');
+  width: 32px;
+  height: 32px;
+}
+
