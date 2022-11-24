@@ -1,29 +1,42 @@
 .form-input {
-  width: 100%;
-  text-align: center;
+  display: flex;
+  width: 90%;
+  height: 41px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  justify-content: center;
 }
 
+.button-add-user {
+  margin-top: 4px;
+  border: none;
+  background: none;
+  height: 32px;
+  width: 32px;
+  background-image: url('./images/add.png');
+}
 .input-person {
   border: none;
   background: none;
   font-size: 20px;
   color: white;
-  width: 95%;
+  width: 75%;
   margin: 0 auto;
-  line-height: 41px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  pointer-events: none;
 }
 
-.button-add-user {
-  position: absolute;
-  margin-top: 5px;
-  right: 5%;
+input:focus {
+  outline: none;
+}
+
+.button-post-user {
+  visibility: hidden;
+  margin-top: 7px;
   border: none;
   background: none;
-  background-image: url('./images/add.png');
-  width: 32px;
-  height: 32px;
+  background-image: url('./images/ok.png');
+  width: 24px;
+  height: 24px;
 }

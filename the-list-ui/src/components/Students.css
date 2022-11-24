@@ -1,10 +1,11 @@
 .Students {
   color: white;
+  width: 100%;
 }
 
 .one-student {
   font-size: 20px;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   line-height: 41px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
