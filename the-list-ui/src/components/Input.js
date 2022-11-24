@@ -10,14 +10,14 @@ export default function Input() {
     setName('');
   };
   return (
-    <form className="form-input"onSubmit={onAdd}>
+    <form className="form-input" onSubmit={onAdd}>
       <input
-        className='input-person'
-        placeholder='Введите имя студента'
+        className="input-person"
+        placeholder="Введите имя студента"
         value={name}
         onChange={event => setName(event.target.value)}
       />
-      <button className='button-add-user' type="submit"></button>
+      <button className="button-add-user" type="submit"></button>
     </form>
   );
 }
