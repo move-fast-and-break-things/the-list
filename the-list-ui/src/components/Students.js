@@ -11,6 +11,7 @@ export default function Students() {
   useEffect(() => {
     getStudents().then(setStudents).catch(setStudentsLoadingError);
   }, []);
+  
   if (studentsLoadingError) {
     return <p>{studentsLoadingError}</p>;
   } else {

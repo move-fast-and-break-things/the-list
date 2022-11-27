@@ -12,19 +12,19 @@
   background: none;
   height: 32px;
   width: 32px;
-  background-image: url('./images/add.png');
+  background-image: url('./images/add.svg');
 }
+
 .input-person {
   border: none;
   background: none;
   font-size: 20px;
   color: white;
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  pointer-events: none;
 }
 
 input:focus {
@@ -33,10 +33,10 @@ input:focus {
 
 .button-post-user {
   visibility: hidden;
-  margin-top: 7px;
+  margin-top: 9px;
   border: none;
   background: none;
-  background-image: url('./images/ok.png');
+  background-image: url('./images/ok.svg');
   width: 24px;
   height: 24px;
 }

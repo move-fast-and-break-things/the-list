@@ -10,11 +10,12 @@ export default function Input() {
     setName('');
   };
   function activationInput() {
-    var el = document.getElementById('input-person');
-    var buttonPost = document.getElementById('button-post-user');
+    let inputPerson = document.getElementById('input-person');
+    let buttonPost = document.getElementById('button-post-user');
+    inputPerson.focus();
     buttonPost.style.visibility = 'visible';
-    el.focus();
   }
+
   return (
     <form className="form-input" onSubmit={onAdd}>
       <button
@@ -23,6 +24,7 @@ export default function Input() {
         type="button"
       ></button>
       <input
+        onClick={activationInput}
         className="input-person"
         id="input-person"
         value={name}
