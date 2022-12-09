@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useMutation, useQueryClient } from 'react-query';
 import { postStudents } from '../request-functions';
 import './Input.css';
+import Students from './Students';
 
 export default function Input() {
   const [name, setName] = useState('');
@@ -15,6 +17,13 @@ export default function Input() {
     inputPerson.focus();
     buttonPost.style.visibility = 'visible';
   }
+  const queryClient = useQueryClient();
+  const mutation = useMutation(postStudents, {
+    onSuccess: () => {
+      // Инвалидация и обновление
+      queryClient.invalidateQueries('students');
+    },
+  });
 
   return (
     <form className="form-input" onSubmit={onAdd}>
