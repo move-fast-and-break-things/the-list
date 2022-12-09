@@ -22,7 +22,7 @@ export default function Input() {
     onSuccess: () => {
       // Инвалидация и обновление
       queryClient.invalidateQueries('students');
-    },
+    }
   });
 
   return (
