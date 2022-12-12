@@ -3,16 +3,16 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import Input from './components/Input';
 import Students from './components/Students';
 
-export const queryClient = new QueryClient();
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="App">
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
         <Students />
         <Input />
-      </QueryClientProvider>
-    </div>
+      </div>
+    </QueryClientProvider>
   );
 }
 
