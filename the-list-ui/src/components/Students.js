@@ -1,19 +1,14 @@
-import { useEffect, useState } from 'react';
-import { getStudents } from '../request-functions';
+import { useStudents } from '../apiHooks';
 import './Students.css';
 
 export default function Students() {
-  const [students, setStudents] = useState([]);
-  const [studentsLoadingError, setStudentsLoadingError] = useState();
+  const { data: students, error: studentsLoadingError } = useStudents();
 
   const divStudents = [];
 
-  useEffect(() => {
-    getStudents().then(setStudents).catch(setStudentsLoadingError);
-  }, []);
   if (studentsLoadingError) {
-    return <p>{studentsLoadingError}</p>;
-  } else {
+    return <p>{studentsLoadingError.toString()}</p>;
+  } else if (students) {
     for (let i = 0; i < students.length; i++) {
       divStudents.push(
         <div className="one-student" key={students[i]._id}>

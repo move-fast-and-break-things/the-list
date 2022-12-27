@@ -1,0 +1,42 @@
+.form-input {
+  display: flex;
+  width: 90%;
+  height: 41px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  justify-content: center;
+}
+
+.button-add-user {
+  margin-top: 4px;
+  border: none;
+  background: none;
+  height: 32px;
+  width: 32px;
+  background-image: url('./images/add.svg');
+}
+
+.input-person {
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: white;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+input:focus {
+  outline: none;
+}
+
+.button-post-user {
+  visibility: hidden;
+  margin-top: 9px;
+  border: none;
+  background: none;
+  background-image: url('./images/ok.svg');
+  width: 24px;
+  height: 24px;
+}
