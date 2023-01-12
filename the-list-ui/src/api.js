@@ -9,7 +9,8 @@ export async function deleteStudents(id) {
         await fetch(`${BE_URL}/students`, {
         method: 'DELETE',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'API-Key': 'secret'
         },
         body: JSON.stringify({ _id: id})
     });

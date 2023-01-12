@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <Input />
-      <button onClick={() => deleteStudents("635ed6328590391013135b64")}>Тыкалка тест для удаления</button>
+      <button onClick={() => deleteStudents("635ed6938590391013135b66")}>Тыкалка тест для удаления</button>
     </div>
 >>>>>>> 39d83be (Начал работать над функцией удаления студентов для фронтенда)
   );
