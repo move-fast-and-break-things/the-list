@@ -6,15 +6,15 @@ export async function getStudents() {
 }
 
 export async function deleteStudents(id) {
-        await fetch(`${BE_URL}/students/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          'API-Key': 'secret'
-        },
-        body: JSON.stringify({ _id: id})
-    });
-  }
+  await fetch(`${BE_URL}/students/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'API-Key': 'secret'
+    },
+    body: JSON.stringify({ _id: id })
+  });
+}
 
 /**
  * @param {string} name

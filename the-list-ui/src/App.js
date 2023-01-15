@@ -11,8 +11,14 @@ function App() {
       <div className="App">
         <Students />
         <Input />
-        <form method="DELETE" >
-        <button type="submit" name="delete_stud" onClick={() => deleteStudents("63c3d6708825941442769959")}>Тыкалка тест для удаления</button>
+        <form method="DELETE">
+          <button
+            type="submit"
+            name="delete_stud"
+            onClick={() => deleteStudents('63c3d6708825941442769959')}
+          >
+            Тыкалка тест для удаления
+          </button>
         </form>
       </div>
     </QueryClientProvider>
