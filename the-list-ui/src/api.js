@@ -6,7 +6,7 @@ export async function getStudents() {
 }
 
 export async function deleteStudents(id) {
-        await fetch(`${BE_URL}/students`, {
+        await fetch(`${BE_URL}/students/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

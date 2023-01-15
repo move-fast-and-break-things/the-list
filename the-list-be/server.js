@@ -66,10 +66,10 @@ router.patch('/students/:id', async ctx => {
   ctx.body = editNameStudentResult;
 });
 
-router.delete('/students/', async ctx => {
+router.delete('/students/:id', async ctx => {
     const { body } = ctx.request;
   const deleteStudentResult = await students.deleteOne({
-    _id: new ObjectId(body.id)
+    _id: new ObjectId(ctx.params.id)
   });
   ctx.body = deleteStudentResult;
 });
