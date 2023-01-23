@@ -67,7 +67,6 @@ router.patch('/students/:id', async ctx => {
 });
 
 router.delete('/students/:id', async ctx => {
-  const { body } = ctx.request;
   const deleteStudentResult = await students.deleteOne({
     _id: new ObjectId(ctx.params.id)
   });
