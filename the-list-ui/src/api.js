@@ -11,7 +11,7 @@ export async function deleteStudents(id) {
     headers: {
       'Content-Type': 'application/json',
       'API-Key': 'secret'
-    },
+    }
   });
 }
 
