@@ -12,7 +12,6 @@ export async function deleteStudents(id) {
       'Content-Type': 'application/json',
       'API-Key': 'secret'
     },
-    body: JSON.stringify({ _id: id })
   });
 }
 
@@ -24,6 +23,7 @@ export async function postStudents(name) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
-    }
+    },
+    body: JSON.stringify({ name: name })
   });
 }
