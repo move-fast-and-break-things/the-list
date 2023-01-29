@@ -7,11 +7,17 @@ export async function getStudents() {
 
 export async function deleteStudents(id) {
   await fetch(`${BE_URL}/students/${id}`, {
-    method: 'DELETE',
+    method: 'DELETE'
+  });
+}
+
+export async function updateStudent(id, name) {
+  await fetch(`${BE_URL}/students/${id}`, {
+    method: 'PATCH',
     headers: {
-      'Content-Type': 'application/json',
-      'API-Key': 'secret'
-    }
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name: name })
   });
 }
 
