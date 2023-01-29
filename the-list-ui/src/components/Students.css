@@ -12,6 +12,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .number {
@@ -25,4 +27,13 @@
 .name-one-student {
   display: inline;
   vertical-align: middle;
+}
+.delete-icon {
+  padding: 2px;
+  border: 0;
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+  background: rgba(204, 73, 199, 0.5);
+  margin: 0 2px;
 }
