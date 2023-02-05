@@ -27,14 +27,10 @@ export default function Students() {
   const { mutate: updateStudent, isLoading: isUpdatingStudent } =
     useUpdateStudent();
 
-  const date = formatDate(new Date());
+  const [date, setDate] = useState(formatDate(new Date()));
   const { data: attendance } = useStudentsAttendance(date);
-  const { mutate: addStudentAttendance, isLoading: isAddingStudentAttendance } =
-    useAddStudentAttendance();
-  const {
-    mutate: removeStudentAttendance,
-    isLoading: isRemoveStudentAttendance
-  } = useRemoveStudentAttendance();
+  const { mutate: addStudentAttendance } = useAddStudentAttendance();
+  const { mutate: removeStudentAttendance } = useRemoveStudentAttendance();
 
   const divStudents = [];
 
@@ -116,10 +112,22 @@ export default function Students() {
               </button>{' '}
             </>
           )}
-          {attendance?.students.includes(students[i]._id) && <img src={mark} />}
+          {attendance?.students.includes(students[i]._id) && (
+            <img alt="checkmark" src={mark} />
+          )}
         </div>
       );
     }
-    return <div className="Students">{divStudents}</div>;
+    return (
+      <div className="Students">
+        <input
+          type="date"
+          value={date}
+          onChange={event => setDate(event.target.value)}
+          max={formatDate(new Date())}
+        ></input>
+        <div>{divStudents}</div>
+      </div>
+    );
   }
 }
