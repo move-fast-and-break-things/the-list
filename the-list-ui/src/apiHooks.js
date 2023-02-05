@@ -3,7 +3,10 @@ import {
   getStudents,
   postStudents,
   deleteStudents,
-  updateStudent
+  updateStudent,
+  addStudentAttendance,
+  removeStudentAttendance,
+  getStudentAttendance
 } from './api';
 
 export function useStudents() {
@@ -38,4 +41,28 @@ export function useDeleteStudent() {
       queryClient.invalidateQueries('useStudents');
     }
   });
+}
+
+export function useAddStudentAttendance() {
+  const queryClient = useQueryClient();
+  return useMutation(({ id, date }) => addStudentAttendance(id, date), {
+    onSuccess: () => {
+      queryClient.invalidateQueries('useStudentAttendance');
+    }
+  });
+}
+
+export function useRemoveStudentAttendance() {
+  const queryClient = useQueryClient();
+  return useMutation(({ id, date }) => removeStudentAttendance(id, date), {
+    onSuccess: () => {
+      queryClient.invalidateQueries('useStudentAttendance');
+    }
+  });
+}
+
+export function useStudentsAttendance(date) {
+  return useQuery(['useStudentAttendance', date], () =>
+    getStudentAttendance(date)
+  );
 }

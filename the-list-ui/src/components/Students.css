@@ -37,3 +37,8 @@
   background: rgba(204, 73, 199, 0.5);
   margin: 0 2px;
 }
+
+.Students input[type='date'] {
+  margin: 0 auto;
+  display: block;
+}
