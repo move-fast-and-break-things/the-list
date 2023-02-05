@@ -1,10 +1,22 @@
-import { useStudents, useUpdateStudent, useDeleteStudent } from '../apiHooks';
+import {
+  useStudents,
+  useUpdateStudent,
+  useDeleteStudent,
+  useStudentsAttendance,
+  useAddStudentAttendance,
+  useRemoveStudentAttendance
+} from '../apiHooks';
 import './Students.css';
 import deleteIcon from './images/delete.svg';
 import editIcon from './images/edit.svg';
 import ok from './images/ok.svg';
 import cancel from './images/cancel.svg';
 import { useState } from 'react';
+import mark from './images/checkmark.svg';
+
+function formatDate(date) {
+  return date.toISOString().split('T')[0];
+}
 
 export default function Students() {
   const [editStudentID, setEditStudentId] = useState('');
@@ -15,6 +27,15 @@ export default function Students() {
   const { mutate: updateStudent, isLoading: isUpdatingStudent } =
     useUpdateStudent();
 
+  const date = formatDate(new Date());
+  const { data: attendance } = useStudentsAttendance(date);
+  const { mutate: addStudentAttendance, isLoading: isAddingStudentAttendance } =
+    useAddStudentAttendance();
+  const {
+    mutate: removeStudentAttendance,
+    isLoading: isRemoveStudentAttendance
+  } = useRemoveStudentAttendance();
+
   const divStudents = [];
 
   if (studentsLoadingError) {
@@ -22,7 +43,11 @@ export default function Students() {
   } else if (students) {
     for (let i = 0; i < students.length; i++) {
       divStudents.push(
-        <div className="one-student" key={students[i]._id}>
+        <div
+          className="one-student"
+          key={students[i]._id}
+          onClick={() => addStudentAttendance({ id: students[i]._id, date })}
+        >
           <div className="number">{i + 1}</div>
           {editStudentID === students[i]._id ? (
             <>
@@ -79,6 +104,7 @@ export default function Students() {
               </button>{' '}
             </>
           )}
+          {attendance?.students.includes(students[i]._id) && <img src={mark} />}
         </div>
       );
     }

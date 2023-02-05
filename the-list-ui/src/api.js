@@ -33,3 +33,30 @@ export async function postStudents(name) {
     body: JSON.stringify({ name: name })
   });
 }
+
+async function patchAttendance(action, studentId, date) {
+  if (!date) {
+    throw new Error('Вы должны передать дату');
+  }
+  const response = await fetch(`${BE_URL}/attendance/${date}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ _id: studentId, action })
+  });
+  return response.json();
+}
+
+export async function addStudentAttendance(studentId, date) {
+  return patchAttendance('add', studentId, date);
+}
+
+export async function removeStudentAttendance(studentId, date) {
+  return patchAttendance('remove', studentId, date);
+}
+
+export async function getStudentAttendance(date) {
+  const response = await fetch(`${BE_URL}/attendance/${date}`);
+  return response.json();
+}
