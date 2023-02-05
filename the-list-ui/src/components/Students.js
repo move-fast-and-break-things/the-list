@@ -46,7 +46,13 @@ export default function Students() {
         <div
           className="one-student"
           key={students[i]._id}
-          onClick={() => addStudentAttendance({ id: students[i]._id, date })}
+          onClick={() => {
+            if (attendance?.students.includes(students[i]._id)) {
+              removeStudentAttendance({ id: students[i]._id, date });
+            } else {
+              addStudentAttendance({ id: students[i]._id, date });
+            }
+          }}
         >
           <div className="number">{i + 1}</div>
           {editStudentID === students[i]._id ? (
@@ -59,7 +65,8 @@ export default function Students() {
               <button
                 disabled={isUpdatingStudent}
                 className="icon"
-                onClick={() => {
+                onClick={event => {
+                  event.stopPropagation();
                   updateStudent(
                     { id: editStudentID, name: editStudentName.trim() },
                     {
@@ -75,7 +82,8 @@ export default function Students() {
               </button>
               <button
                 className="icon"
-                onClick={() => {
+                onClick={event => {
+                  event.stopPropagation();
                   setEditStudentId('');
                   setEditStudentName('');
                 }}
@@ -88,7 +96,8 @@ export default function Students() {
               <div className="name-one-student">{students[i].name}</div>
               <button
                 className="icon"
-                onClick={() => {
+                onClick={event => {
+                  event.stopPropagation();
                   setEditStudentId(students[i]._id);
                   setEditStudentName(students[i].name);
                 }}
@@ -98,7 +107,10 @@ export default function Students() {
               <button
                 disabled={isDeletingStudent}
                 className="icon"
-                onClick={() => deleteStudent(students[i]._id)}
+                onClick={event => {
+                  event.stopPropagation();
+                  deleteStudent(students[i]._id);
+                }}
               >
                 <img src={deleteIcon} alt="delete icon" />
               </button>{' '}
