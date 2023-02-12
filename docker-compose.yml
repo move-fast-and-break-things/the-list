@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  ui:
+    container_name: the-list-ui
+    build:
+      context: the-list-ui
+      args:
+        - REACT_APP_BACKEND_URL=
+    restart: unless-stopped
+    ports:
+      - 3000:80
+
+  be:
+    container_name: the-list-be
+    build: the-list-be
+    restart: unless-stopped
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017
+
+  mongo:
+    container_name: the-list-mongo
+    image: mongo:6.0.4
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    
+volumes:
+  mongo-data:
+    driver: local
+      
