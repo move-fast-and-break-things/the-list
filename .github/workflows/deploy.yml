@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  push:
+    branch:
+      - main
+      - feat/ci-deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+      - name: Deploy
+        run: |
+          docker context create --docker "host=ssh://root@188.120.230.133" --description "deploy server" "mfabt.club"
+          docker --context "mfabt.club" compose up --build -d
