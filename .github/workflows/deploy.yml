@@ -17,5 +17,6 @@ jobs:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
       - name: Deploy
         run: |
+          echo "188.120.230.133 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK7gL3O9UrX6EJ/fDVqB5wlh7e25OxdPlWkIHkNtAdf8" >> ~/.ssh/known_hosts
           docker context create --docker "host=ssh://root@188.120.230.133" --description "deploy server" "mfabt.club"
           docker --context "mfabt.club" compose up --build -d
