@@ -4,7 +4,6 @@ on:
   push:
     branch:
       - main
-      - feat/ci-deploy
 
 concurrency: deploy
 
